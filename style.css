@@ -66,7 +66,7 @@ body {
   border-radius: 50%;
 }
 
-.display-card-number {
+#display-card-number {
   font-size: 24px;
   letter-spacing: 2px;
   margin-bottom: 20px;
@@ -88,7 +88,7 @@ body {
   align-items: center;
 }
 
-.display-card-cvc {
+#display-card-cvc {
   font-size: 12px;
   color: white;
   letter-spacing: 2px;
@@ -106,6 +106,7 @@ form {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 10px;
+  row-gap: 7px;
   width: 40%;
   height: min-content;
   margin-top: 22%;
@@ -114,13 +115,14 @@ form {
 label {
   font-size: 12px;
   letter-spacing: 2px;
+  margin-top: 5px;
 }
 
 input {
   height: 40px;
   width: 100%;
-  margin-top: 8px;
-  /* margin-bottom: 20px; */
+  /* margin-top: 8px; */
+  /* margin-bottom: 5px; */
   padding-left: 15px;
   font-size: 18px;
   color: hsl(278, 68%, 11%);
@@ -133,6 +135,11 @@ input:focus {
 }
 input::placeholder {
   color: hsl(270, 3%, 87%);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 #label-name {
@@ -188,7 +195,7 @@ input::placeholder {
   grid-row: 9 / 10;
 }
 
-#btn {
+button {
   grid-column: 1 / 5;
   grid-row: 10 / 11;
   height: 50px;
@@ -198,9 +205,33 @@ input::placeholder {
   color: white;
   font-weight: 500;
   font-size: 18px;
-  margin-top: 10px;
+  margin-top: 5px;
+  width: 100%;
 }
 
+.success-message {
+  width: 40%;
+  margin-top: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.error {
+  color: red;
+  font-size: 10px;
+}
+
+.success-message > h1 {
+  letter-spacing: 3px;
+  font-size: 24px;
+  font-weight: 500;
+}
+.success-message > p {
+  color:hsl(279, 6%, 55%);
+  margin-bottom: 10px;
+}
 
 @media screen and (max-width: 700px) {
   body { 
@@ -260,3 +291,10 @@ input::placeholder {
   }
 }
 
+.hidden {
+  display: none;
+}
+
+.red-border {
+  border: 1px solid red;
+}

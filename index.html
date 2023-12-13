@@ -23,15 +23,15 @@
         <div class="circle-big"></div>
         <div class="circle-small"></div>
       </div>
-      <p class="display-card-number">0000 0000 0000 0000</p>
+      <p id="display-card-number">0000 0000 0000 0000</p>
       <div class="card-info">
-        <p class="display-card-name">JANE APPLESEED</p>
-        <p class="display-card-exp-date">00/00</p>
+        <p id="display-card-name">JANE APPLESEED</p>
+        <p id="display-card-exp-date">00/00</p>
       </div>
     </div>
 
     <div class="card-back">
-      <p class="display-card-cvc">000</p>
+      <p id="display-card-cvc">000</p>
     </div>
 
   </div>
@@ -41,20 +41,26 @@
     <form action="">
       <label id="label-name" for="input-name">CARDHOLDER NAME</label>
       <label id="label-number" for="input-number">CARD NUMBER</label>
-      <label id="label-date" for="">EXP. DATE (MM/YY)</label>
+      <label id="label-date" for="input-mm">EXP. DATE (MM/YY)</label>
       <label id="label-cvc" for="input-cvc">CVC</label>
       <input id="input-name" type="text" placeholder="e.g. Jane Appleseed">
-      <input id="input-number" type="number" placeholder="e.g. 1234 5678 9123 0000">
+      <input id="input-number" type="text" placeholder="e.g. 1234 5678 9123 0000">
       <input id="input-mm" type="number" placeholder="MM">
       <input id="input-yy" type="number" placeholder="YY">
       <input id="input-cvc" type="number" placeholder="e.g. 123">
-      <div id="error-name" class="error">error</div>
-      <div id="error-number" class="error">error</div>
-      <div id="error-date" class="error">error</div>
-      <div id="error-cvc" class="error">error</div>
-      <button id="btn">Confirm</button>
+      <div id="error-name" class="error hidden">error</div>
+      <div id="error-number" class="error hidden">error</div>
+      <div id="error-date" class="error hidden">Can't be blank</div>
+      <div id="error-cvc" class="error hidden">error</div>
+      <button id="btn-confirm">Confirm</button>
     </form>
-    
+
+    <div class="success-message hidden">
+      <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="40" fill="url(#a)"/><path d="M28 39.92 36.08 48l16-16" stroke="#fff" stroke-width="3"/><defs><linearGradient id="a" x1="-23.014" y1="11.507" x2="0" y2="91.507" gradientUnits="userSpaceOnUse"><stop stop-color="#6348FE"/><stop offset="1" stop-color="#610595"/></linearGradient></defs></svg>
+      <h1>THANK YOU!</h1>
+      <p>We've added your card details</p>
+      <button id="btn-continue">Continue</button>
+    </div>
 
   </div>
 </body>
